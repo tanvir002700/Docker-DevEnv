@@ -1,1 +1,1 @@
-FROM mailhog
+FROM mailhog/mailhog
