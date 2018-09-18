@@ -9,3 +9,11 @@ services:
       - '9300:9300'
       - '9200:9200'
 
+  mailhog:
+    build: 'mailhog'
+    command: ["-storage=maildir", "-maildir-path=/maildir"]
+    volumes:
+      - './mailhog/data:/maildir'
+    ports:
+      - '1025:1025'
+      - '8025:8025'
