@@ -32,4 +32,11 @@ services:
       - './mysql/data:/var/lib/mysql'
     ports:
       - '3306:3306'
-      - '3307:3307'
+
+  postgres:
+    build: 'postgres'
+    env_file: ./postgres/env
+    volumes:
+      - './postgres/data/storage:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
